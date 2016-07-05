@@ -1,3 +1,23 @@
+<button ui-sref="tareas.new" ng-click="hideAdd()" class="btn eliminar">Add Task</button>
+
+<div class="row" ng-hide="hideNew">
+	<form class="col s12">
+		<div class="row">
+			<div class="input-field col s12">
+				<input type="text" class="validate">
+				<label>Title</label>
+			</div>
+			<div class="input-field col s12">
+				<textarea class="materialize-textarea"></textarea>
+				<label>Description</label>
+			</div>
+			<div class="input-field col s12">
+				<button ng-controller="AppCtrl" ng-click="addTask()" class="btn blue eliminar">Add</button>
+			</div>
+		</div>
+	</form>
+</div>
+
 <ul class="collapsible" data-collapsible="accordion">
 	<li ng-repeat="task in tasks">
 		<div class="collapsible-header"><i class="material-icons">receipt</i>{{task.title}}</div>

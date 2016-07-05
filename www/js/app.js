@@ -20,15 +20,23 @@ angular.module('starter', ['ui.router'])
       controller: 'AppCtrl'
     })
 
-  $urlRouterProvider.otherwise('/tareas');
+    .state('tareas.new', {
+      url: '/new',
+      templateUrl: 'lib/views/newTarea.html',
+      controller: 'AppCtrl'
+    })
+
+  $urlRouterProvider.otherwise('/tasks');
 })
 
-.controller('AppCtrl', ['$scope', function($scope) {
+.controller('AppCtrl', ['$scope', '$state', function($scope, $state) {
 
   $('.collapsible').collapsible({
     accordion : false // A setting that changes the collapsible behavior to expandable instead of the default accordion style
   });
-  
+
+  $scope.hideNew = true;
+
   $scope.tasks = [
     {
       title: 'Tarea 1',
@@ -39,5 +47,17 @@ angular.module('starter', ['ui.router'])
       description: 'Description to tarea 2'
     }
   ];
+
+  $scope.hideAdd = function() {
+    if($scope.hideNew) {
+      $scope.hideNew = false;
+    }else{
+      $scope.hideNew = true;
+    }
+  }
+
+  $scope.addTask = function() {
+    $state.go('tareas');
+  }
 
 }])
