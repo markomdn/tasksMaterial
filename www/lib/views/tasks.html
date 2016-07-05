@@ -1,0 +1,9 @@
+<ul class="collapsible" data-collapsible="accordion">
+	<li ng-repeat="task in tasks">
+		<div class="collapsible-header"><i class="material-icons">receipt</i>{{task.title}}</div>
+		<div class="collapsible-body">
+			<p>{{task.description}}</p>
+			<button class="eliminar btn red">Eliminar</button>
+		</div>
+	</li>
+</ul>
