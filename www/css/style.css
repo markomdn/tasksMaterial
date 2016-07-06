@@ -1,4 +1,14 @@
 /* Empty. Add your own CSS if you like */
-button.eliminar {
+button.largeButton {
     width: 100%;
+}
+
+[type="checkbox"]+label{
+	position: absolute !important;
+	right: 0 !important;
+	margin-top: 10px !important;
+}
+
+.true{
+background-color: #d4d2d2 !important;
 }
